@@ -10,7 +10,6 @@ public class Square {
     private ImageIcon l = new ImageIcon("images/LilyPad.png");
     private int Status = 6;
 
-
     // private JButton bt = new JButton();
     private JButton b = new JButton();
     private int X_Pos = b.getLocation().x;
@@ -22,55 +21,65 @@ public class Square {
         b.setIcon(i);
     }
 
-    public int getStatus(){
+    public int getStatus() {
         return Status;
     }
 
-    public void imageReset(int newStatus) {
+    // made it a integer instead so it takes a status that works out what image to
+    // change it to.
+    public void moveTo(int newStatus) {
         Status = newStatus;
-        if(Status ==0){
+        if (Status == 0) {
             b.setIcon(i);
         }
-        //green 
-        else if(Status ==1){
+        // green
+        else if (Status == 1) {
             b.setIcon(gf1);
         }
-        //green 2 
-        else if(Status ==2){
+        // green 2
+        else if (Status == 2) {
             b.setIcon(gf2);
         }
-        //red 
-        else if(Status ==3){
+        // red
+        else if (Status == 3) {
             b.setIcon(rf1);
         }
-        //red 2
-        else if(Status ==4){
+        // red 2
+        else if (Status == 4) {
             b.setIcon(rf2);
         }
-        //lilypad
-        else if(Status ==5){
+        // lilypad
+        else if (Status == 5) {
             b.setIcon(l);
         }
-        //water
-        else if(Status ==6){
+        // water
+        else if (Status == 6) {
             b.setIcon(i);
         }
-        
+
     }
     // public void SetImageGf(){
-    
-    //     b.setIcon(gf1);
+
+    // b.setIcon(gf1);
     // }
     // public void SetImageRf(){
-    //     b.setIcon(rf1);
+    // b.setIcon(rf1);
     // }
-    
-    //swapping buttons
-    public void moveTo(Square p) {
-        return ;
-     }
 
-     //returning coordinates
+    // swapping buttons, didnt really use it instead i did the method in Board
+    public void moveTo(Square p) {
+        return;
+    }
+
+    // method that puts rules
+    public void validMove() {
+        if ((X_Pos < 5) || (Y_Pos < 5)) {
+            System.out.println("Valid move");
+            b.setIcon(l);
+        }
+    }
+
+    // returning coordinates
     public int getLocx() {
         return X_Pos;
     }
@@ -78,7 +87,8 @@ public class Square {
     public int getLocY() {
         return Y_Pos;
     }
-    //getting the button
+
+    // getting the button
     public JButton getButton() {
         return b;
     }
