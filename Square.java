@@ -12,12 +12,12 @@ public class Square {
 
     // private JButton bt = new JButton();
     private JButton b = new JButton();
-    private int X_Pos = b.getLocation().x;
-    private int Y_Pos = b.getLocation().y;
+    private int X_Pos;
+    private int Y_Pos;
 
     public Square(int xPos, int yPos) {
-        xPos = X_Pos;
-        yPos = Y_Pos;
+        X_Pos = xPos;
+        Y_Pos = yPos;
         b.setIcon(i);
     }
 
@@ -66,21 +66,22 @@ public class Square {
     // b.setIcon(rf1);
     // }
 
+    // resets frogs if they are selected
+    public void clear() {
+        if (Status == 2) {
+            moveTo(1);
+        } else if (Status == 4) {
+            moveTo(3);
+        }
+    }
+
     // swapping buttons, didnt really use it instead i did the method in Board
     public void moveTo(Square p) {
         return;
     }
 
-    // method that puts rules
-    public void validMove() {
-        if ((X_Pos < 5) || (Y_Pos < 5)) {
-            System.out.println("Valid move");
-            b.setIcon(l);
-        }
-    }
-
     // returning coordinates
-    public int getLocx() {
+    public int getLocX() {
         return X_Pos;
     }
 
