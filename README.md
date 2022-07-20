@@ -1,2 +1,2 @@
 # Hopper-Game
-This game was made for the SCC110 Java coursework
+This is frog version of checkers where frogs can hop over lilypads to kill other frogs.
